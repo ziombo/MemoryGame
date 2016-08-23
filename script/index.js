@@ -6,12 +6,28 @@
 		newGame = new game();
 		newGame.chooseRandom();
 	});
+	$(document).on("click", "div.active", function () {
+		if ($(this).attr('class').split(' ')[0] != newGame.pattern[newGame.currentUserMove]) {
+			$(".active").removeClass("active");
+			newGame = {};
+		} else {
+			if (newGame.currentUserMove == newGame.pattern.length - 1) {
+				newGame.currentUserMove = 0;
+				setTimeout(function () {
+					newGame.chooseRandom();
+				}, 200);
+			}
+			else {
+				newGame.currentUserMove++;
+			}
+		}
+	});
 
 	var game = function () {
 		var gameInstance = this;
 		this.gameOngoing = true,
-		this.pattern = [1,2,3],
-		this.userPattern = [],
+		this.currentUserMove = 0,
+		this.pattern = [],
 		this.blink = function (index) {
 			$(".active").removeClass("active");
 			var currentBtn = $("#btn-" + this.pattern[index]);
@@ -19,9 +35,13 @@
 			setTimeout(function () {
 				currentBtn.removeClass("blink");
 				if (index < gameInstance.pattern.length) {
-					gameInstance.blink(++index);
+					setTimeout(function () {
+						gameInstance.blink(++index);
+					}, 100);
 				} else {
-					$(".play-btn").addClass("active");
+					setTimeout(function () {
+						$(".play-btn").addClass("active");
+					}, 250);
 				}
 			}, 300);
 		},
