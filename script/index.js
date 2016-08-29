@@ -61,16 +61,16 @@
 					audio = new Audio('sound/415.wav');
 					break;
 				case (2):
-					audio = new Audio('../sound/310.wav');
+					audio = new Audio('sound/310.wav');
 					break;
 				case (3):
-					audio = new Audio('/sound/252.wav');
+					audio = new Audio('sound/252.wav');
 					break;
 				case (4):
-					audio = new Audio('/sound/209.wav');
+					audio = new Audio('sound/209.wav');
 					break;
 				case (0):
-					audio = new Audio('/sound/99.wav');
+					audio = new Audio('sound/99.wav');
 					break;
 			};
 			audio.play();
