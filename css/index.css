@@ -1,4 +1,12 @@
-﻿html,body {
+﻿@font-face {
+    font-family: alarm-clock;
+    src: url(../fonts/digital-7.ttf);
+}
+@font-face{
+	font-family: ubuntu;
+	src: url(../fonts/Ubuntu-R.ttf);
+}
+html,body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
@@ -20,28 +28,77 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	z-index: 50;
+	text-align: center;
+	color: #E50000;
+	font-size: 35px;
+	font-family: alarm-clock;
+}
+#score{
+	display: inline-block;
+	letter-spacing: 1.3px;
+	margin: 20px 0;
+}
+#start-game{
+	display: block;
+	margin: 0 auto;
+	width: 60%;
+	font-family: ubuntu;
+	font-size: 35px;
+	padding: 10px;
+	border: none;
+	border-radius: 25px;
+	cursor: pointer;
+	outline: 0;
+	color: #FFFFFF;
+	background-color: #71020A;
+	box-shadow: 0 10px #3D0005;
+}
+#start-game:hover {
+	background-color: #7F0000; 
+}
+#start-game:active{
+	box-shadow: 0 5px #3D0005;
+    transform: translateY(5px);
 }
 .play-btn{
-	height: 50%;
-	width: 50%;
-	display: inline-block;
+	position: absolute;
 	vertical-align: top;
-	float: left; /* magically fixes scrollbar that shouldnt appear. something with margin collapse*/
+	border: 4px outset #777;
+}
+.play-btn:active{
+	border: 4px inset #777;
 }
 .active{
 	cursor: pointer;
 }
 #btn-1{
 	background-color: #D60D0D;
+	top: 0;
+	bottom: 50%;
+	left: 0;
+	right: 50%;
 }
 #btn-2{
 	background-color: #00007f;
+	top: 0;
+	bottom: 50%;
+	left: 50%;
+	right: 0;
 }
 #btn-3{
 	background-color: #067906;
+	top: 50%;
+	bottom: 0;
+	left: 0;
+	right: 50%;
 }
 #btn-4{
 	background-color: #b2aa00;
+	top: 50%;
+	bottom: 0;
+	left: 50%;
+	right: 0%;
 }
 #btn-1.active:hover{
 	background-color: #F00;
