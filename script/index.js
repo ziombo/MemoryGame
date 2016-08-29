@@ -58,10 +58,10 @@
 			var audio = new Audio();
 			switch (number) {
 				case (1):
-					audio = new Audio('/sound/415.wav');
+					audio = new Audio('sound/415.wav');
 					break;
 				case (2):
-					audio = new Audio('/sound/310.wav');
+					audio = new Audio('../sound/310.wav');
 					break;
 				case (3):
 					audio = new Audio('/sound/252.wav');
